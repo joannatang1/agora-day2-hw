@@ -1,0 +1,35 @@
+<html>
+    <head>
+            <title>Agora Day 2 Homework</title>
+    </head>
+    <body>
+        <input type="text" id="num1" name="first">
+        <input type="text" id="num2" name="second">
+        <button type="button" onclick="calculate('add')">Add</button>
+        <button type="button" onclick="calculate('subtract')">Subtract</button>
+        <button type="button" onclick="calculate('multiply')">Multiply</button>
+        <button type="button" onclick="calculate('divide')">Divide</button>
+        <div>
+            <span>answer: </span>
+            <span id="answer"></span>
+        </div>
+    </body>
+    <script>
+
+
+        function calculate(operation){
+            let first = document.getElementById("num1").value;
+            first = parseInt(first, 10);
+            let second = document.getElementById("num2").value;
+            second = parseInt(second, 10);
+            let ans;
+            if (operation === "add") ans = first + second;
+            else if (operation === "subtract") ans = first - second; 
+            else if (operation === "multiply") ans = first * second;
+            else if (operation === "divide" && second != 0) ans = first / second;
+            
+            document.getElementById("answer").innerHTML = ans;
+        }
+
+    </script>
+</html>
